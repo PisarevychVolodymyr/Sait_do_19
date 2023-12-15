@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css? family=Open+Sans: 700 | Raleway: 300,400, 600, 700&display=swap" rel="stylesheet">
+    <title>Forum</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <!--  Sprite  -->
+<svg style="display:none;">
+    <symbol id="android-phone-slash"viewBox="0 0 24 24">
+        <g>
+        <path d="M11.29,17.71a1,1,0,0,0,1.42,0,1.15,1.15,0,0,0,.21-.33.94.94,0,0,0,0-.76,1.15,1.15,0,0,0-.21-.33,1,1,0,0,0-1.42,0,1.15,1.15,0,0,0-.21.33.94.94,0,0,0,0,.76A1.15,1.15,0,0,0,11.29,17.71ZM8.66,4H16a1,1,0,0,1,1,1v7.34a1,1,0,0,0,2,0V5a3,3,0,0,0-3-3H8.66a1,1,0,0,0,0,2ZM21.71,20.29l-18-18A1,1,0,0,0,2.29,3.71L5,6.41V19a3,3,0,0,0,3,3h8a3,3,0,0,0,2.76-1.83l1.53,1.54a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM17,19a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8.41l10,10Z"></path>
+</g>
+</symbol>
+<symbol id="angry"viewBox="0 0 24 24">
+    <g>
+        <path d="M10,11a1,1,0,0,0,.89-.55,1,1,0,0,0-.44-1.34l-2-1a1,1,0,1,0-.9,1.78l2,1A.93.93,0,0,0,10,11Zm2-9A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM8.36,15.33a1,1,0,0,0-.13,1.4,1,1,0,0,0,1.41.13,3.76,3.76,0,0,1,4.72,0,1,1,0,0,0,.64.23,1,1,0,0,0,.64-1.76A5.81,5.81,0,0,0,8.36,15.33Zm7.19-7.22-2,1a1,1,0,0,0-.44,1.34A1,1,0,0,0,14,11a.93.93,0,0,0,.45-.11l2-1a1,1,0,0,0-.9-1.78Z"></path>
+</g>
+</symbol>
+<symbol id="annoyed"viewBox="0 0 24 24">
+    <g>
+        <path  d="M9,9a1,1,0,1,0,1,1A1,1,0,0,0,9,9Zm6,4a5,5,0,0,0-4.37,2.57A1,1,0,0,0,11,16.93a1,1,0,0,0,.49.13,1,1,0,0,0,.87-.51A3,3,0,0,1,15,15a1,1,0,0,0,0-2Zm0-4a1,1,0,1,0,1,1A1,1,0,0,0,15,9ZM12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"></path>
+</g>
+</symbol>
+<symbol id="tag-alt"viewBox="0 0 24 24">
+    <g>
+        <path d="M7.5,6A1.5,1.5,0,1,0,9,7.5,1.5,1.5,0,0,0,7.5,6Zm13.62,4.71L12.71,2.29A1,1,0,0,0,12,2H3A1,1,0,0,0,2,3v9a1,1,0,0,0,.29.71l8.42,8.41a3,3,0,0,0,4.24,0L21.12,15a3,3,0,0,0,0-4.24Zm-1.41,2.82h0l-6.18,6.17a1,1,0,0,1-1.41,0L4,11.59V4h7.59l8.12,8.12a1,1,0,0,1,.29.71A1,1,0,0,1,19.71,13.53Z"></path>
+</g>
+</symbol>
+<symbol id="telegram"viewBox="0 0 24 24">
+    <g>
+        <path d="M11.99432,2a10,10,0,1,0,10,10A9.99917,9.99917,0,0,0,11.99432,2Zm3.17951,15.15247a.70547.70547,0,0,1-1.002.3515l-2.71467-2.10938L9.71484,17.002a.29969.29969,0,0,1-.285.03894l.334-2.98846.01069.00848.00683-.059s4.885-4.44751,5.084-4.637c.20147-.189.135-.23.135-.23.01147-.23053-.36152,0-.36152,0L8.16632,13.299l-2.69549-.918s-.414-.1485-.453-.475c-.041-.324.46649-.5.46649-.5l10.717-4.25751s.881-.39252.881.25751Z"></path>
+</g>
+</symbol>
+<symbol id="youtube"viewBox="0 0 24 24">
+    <g>
+        <path d="M23,9.71a8.5,8.5,0,0,0-.91-4.13,2.92,2.92,0,0,0-1.72-1A78.36,78.36,0,0,0,12,4.27a78.45,78.45,0,0,0-8.34.3,2.87,2.87,0,0,0-1.46.74c-.9.83-1,2.25-1.1,3.45a48.29,48.29,0,0,0,0,6.48,9.55,9.55,0,0,0,.3,2,3.14,3.14,0,0,0,.71,1.36,2.86,2.86,0,0,0,1.49.78,45.18,45.18,0,0,0,6.5.33c3.5.05,6.57,0,10.2-.28a2.88,2.88,0,0,0,1.53-.78,2.49,2.49,0,0,0,.61-1,10.58,10.58,0,0,0,.52-3.4C23,13.69,23,10.31,23,9.71ZM9.74,14.85V8.66l5.92,3.11C14,12.69,11.81,13.73,9.74,14.85Z"></path>
+</g>
+</symbol>
+<symbol id="instagram"viewBox="0 0 24 24">
+    <g>
+        <path d="M17.34,5.46h0a1.2,1.2,0,1,0,1.2,1.2A1.2,1.2,0,0,0,17.34,5.46Zm4.6,2.42a7.59,7.59,0,0,0-.46-2.43,4.94,4.94,0,0,0-1.16-1.77,4.7,4.7,0,0,0-1.77-1.15,7.3,7.3,0,0,0-2.43-.47C15.06,2,14.72,2,12,2s-3.06,0-4.12.06a7.3,7.3,0,0,0-2.43.47A4.78,4.78,0,0,0,3.68,3.68,4.7,4.7,0,0,0,2.53,5.45a7.3,7.3,0,0,0-.47,2.43C2,8.94,2,9.28,2,12s0,3.06.06,4.12a7.3,7.3,0,0,0,.47,2.43,4.7,4.7,0,0,0,1.15,1.77,4.78,4.78,0,0,0,1.77,1.15,7.3,7.3,0,0,0,2.43.47C8.94,22,9.28,22,12,22s3.06,0,4.12-.06a7.3,7.3,0,0,0,2.43-.47,4.7,4.7,0,0,0,1.77-1.15,4.85,4.85,0,0,0,1.16-1.77,7.59,7.59,0,0,0,.46-2.43c0-1.06.06-1.4.06-4.12S22,8.94,21.94,7.88ZM20.14,16a5.61,5.61,0,0,1-.34,1.86,3.06,3.06,0,0,1-.75,1.15,3.19,3.19,0,0,1-1.15.75,5.61,5.61,0,0,1-1.86.34c-1,.05-1.37.06-4,.06s-3,0-4-.06A5.73,5.73,0,0,1,6.1,19.8,3.27,3.27,0,0,1,5,19.05a3,3,0,0,1-.74-1.15A5.54,5.54,0,0,1,3.86,16c0-1-.06-1.37-.06-4s0-3,.06-4A5.54,5.54,0,0,1,4.21,6.1,3,3,0,0,1,5,5,3.14,3.14,0,0,1,6.1,4.2,5.73,5.73,0,0,1,8,3.86c1,0,1.37-.06,4-.06s3,0,4,.06a5.61,5.61,0,0,1,1.86.34A3.06,3.06,0,0,1,19.05,5,3.06,3.06,0,0,1,19.8,6.1,5.61,5.61,0,0,1,20.14,8c.05,1,.06,1.37.06,4S20.19,15,20.14,16ZM12,6.87A5.13,5.13,0,1,0,17.14,12,5.12,5.12,0,0,0,12,6.87Zm0,8.46A3.33,3.33,0,1,1,15.33,12,3.33,3.33,0,0,1,12,15.33Z"></path>
+</g>
+</symbol>
+</svg>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header_inner">
+                <div class="header_logo">
+                    <a class="nav_link" href="index.html" style="color: rgb(0, 0, 0); font-size: 25px;"><b>G-Forum</b></a>
+                    <a class="nav_link" href="#News">News</a>
+                    <a class="nav_link" href="#Theme">Theme</a>
+                </div>
+
+                <nav class="nav">
+                    <a class="nav_link" href="#Send">send message</a>
+                    <a class="login_btn" href="#">login</a>
+                </nav>
+           </div>
+        </div>
+</header>
+<!-- Intro -->
+<div class="intro">
+    <div class="container">
+        <div class="intro_bg">
+        <div class="intro_inner" >
+            <h1  class="intro_title">
+                Found a bug or have problems, write here
+            </h1>
+            <h2 class="intro_subtitle">
+                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+            </h2>
+            <a style="border: #000 3px solid;" class="btn btn--orange" href="ticket.html">Create a ticket</a>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- Carousel -->
+<section class="container" id="News">
+    <div class="slider-swrapper">
+        <div class="slider">
+            <img id="slide-1" src="img/for_caru/img1.png" alt="">
+            <img id="slide-2" src="img/for_caru/img2.jpg" alt="">
+            <img id="slide-3" src="img/for_caru/img3.jpg" alt="">
+            <img id="slide-4"src="img/for_caru/img4.jpg" alt="">
+        </div>
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+            <a href="#slide-4"></a>
+        </div>
+    </div>
+</section>
+<!-- Cards -->
+<div class="container" id="Theme">
+    <div class="features">
+        <div class="features_item">
+                <svg class="features_icon" style="width: 100px">
+                    <use xlink:href="#android-phone-slash"></use>
+                </svg>
+            <h4 class="features_title">Launcher problems</h4>
+            <div class="features_text">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div>
+        </div>
+
+        <div class="features_item">
+            <svg class="features_icon" style="width: 100px">
+                <use xlink:href="#tag-alt"></use>
+            </svg>
+        <h4 class="features_title">Market problems</h4>
+            <div class="features_text">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div>
+        </div>
+
+        <div class="features_item">
+                <svg class="features_icon" style="width: 100px">
+                    <use xlink:href="#angry"></use>
+                </svg>
+            <h4 class="features_title">Toxic in game</h4>
+            <div class="features_text">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div>
+        </div>
+
+        <div class="features_item">
+                <svg class="features_icon" style="width: 100px">
+                    <use xlink:href="#annoyed"></use>
+                </svg>
+            <h4 class="features_title">Bags</h4>
+            <div id="Send" class="features_text">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div>
+        </div>
+
+    </div>
+</div>
+   <!-- Forms -->
+   <div class="container" >
+        <div class="forms">
+            <form  action="https://formspree.io/f/mwkgekae"
+            method="POST">
+            <h1>Contact Form</h1>
+            <input class="forms_text" type="text" name="first" placeholder="First name" autocomplete="off" required>
+            <input class="forms_text" type="text" name="last" placeholder="Last name" autocomplete="off" required>
+            <input class="forms_text" type="email" name="email" placeholder="Email" autocomplete="off" required>
+            <textarea class="forms_text" name="message" placeholder="Enter text" autocomplete="off" cols="60" rows="5" required></textarea>
+            <button class="forms_text" type="submit">Send Message</button>
+        </form>
+        </div>
+    </div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer__inner">
+            <div class="footer__block">
+                <h4 class="footer__title">Location</h4>
+                <address class="footer__address">
+                    <div>1488 Melrose Place</div>
+                    <div>Beverly Hills, CA 90210</div>
+                </address>
+            </div>
+
+            <div class="footer__block">
+                <h4 class="footer__title">About G-Forum</h4>
+                <div class="footer__text">
+                    <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+                </div>
+            </div>
+
+            <div class="footer__block">
+                <h4 class="footer__title">Socials</h4>
+            <div class="social">
+            <a class="social_item">
+                <svg  class="social_icon" >
+                    <use xlink:href="#telegram"></use>
+                </svg>
+            </a>
+            <a class="social_item">
+                <svg class="social_icon" >
+                    <use xlink:href="#youtube"></use>
+                </svg>
+            </a>
+            <a class="social_item">
+                <svg class="social_icon" >
+                    <use xlink:href="#instagram"></use>
+                </svg>
+            </a>
+            </div>
+            <div class="footer__text">
+                <p>Email: mail@mail.com</p>
+            </div>
+            </div>
+        </div>
+    </div>
+<!-- copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="copyright__text">
+                <div>Copyright © 2023 XDFGH. All Rights Reserved</div>
+                <div>Made <span>by Pisarevych Volodymyr </span></div>
+            </div>
+        </div>
+    </div>
+</footer> 
+</body>
+</html>
